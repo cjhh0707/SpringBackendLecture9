@@ -1,0 +1,20 @@
+package com.springbackendLecture.Head04_JCF.example03;
+import java.util.Arrays;
+import java.util.List;
+
+public class InstanceMethodRefDemo {
+    public void printString(String s) {
+        System.out.println("String: " + s);
+    }
+
+    public static void main(String[] args) {
+        InstanceMethodRefDemo demo = new InstanceMethodRefDemo();
+        List<String> list = Arrays.asList("A", "B", "C");
+
+        // 람다
+        // list.forEach(s -> demo.printString(s));
+
+        // 인스턴스 메서드 참조
+        list.forEach(demo::printString);
+    }
+}

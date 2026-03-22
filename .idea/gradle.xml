@@ -12,6 +12,38 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/JPAExample" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/JPAExample" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/SpringBye" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/SpringBye" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/SpringGood" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/SpringGood" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/SpringHello" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/SpringHello" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>

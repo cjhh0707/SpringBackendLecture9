@@ -1,9 +1,19 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '4.0.2'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.asciidoctor.jvm.convert' version '4.0.0'
 }
 
-group = 'com.springbackendLecture'
-version = '1.0-SNAPSHOT'
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'SpringGood'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 repositories {
     mavenCentral()
@@ -22,6 +32,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0' //swagger-ui
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
@@ -32,6 +43,10 @@ dependencies {
     asciidoctorExt 'org.springframework.restdocs:spring-restdocs-asciidoctor'
 }
 
+ext {
+    snippetsDir = file("build/generated-snippets")
+}
+
 test {
     useJUnitPlatform()
 }
@@ -40,3 +55,13 @@ ext {
     snippetsDir = file("build/generated-snippets")
 }
 
+tasks.named('test') {
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+
+tasks.named('asciidoctor') {
+    inputs.dir snippetsDir
+    configurations 'asciidoctorExt'
+    dependsOn tasks.named('test')
+}
